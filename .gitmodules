@@ -1,3 +1,6 @@
 [submodule "shas-goals"]
 	path = shas-goals
 	url = https://github.com/shalotelli/shas-goals.git
+[submodule "jasons-goals"]
+	path = jasons-goals
+	url = https://github.com/jsmiff/jasons-goals.git
