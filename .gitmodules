@@ -1,0 +1,3 @@
+[submodule "shas-goals"]
+	path = shas-goals
+	url = https://github.com/shalotelli/shas-goals.git
