@@ -4,3 +4,6 @@
 [submodule "jasons-goals"]
 	path = jasons-goals
 	url = https://github.com/jsmiff/jasons-goals.git
+[submodule "scotts-goals"]
+	path = scotts-goals
+	url = https://github.com/slove11/scotts-goals
