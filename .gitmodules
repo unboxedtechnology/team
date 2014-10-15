@@ -7,3 +7,6 @@
 [submodule "scotts-goals"]
 	path = scotts-goals
 	url = https://github.com/slove11/scotts-goals
+[submodule "chazs-goals"]
+	path = chazs-goals
+	url = https://github.com/chazclark/chazs-goals
