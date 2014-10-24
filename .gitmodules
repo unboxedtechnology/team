@@ -10,3 +10,6 @@
 [submodule "chazs-goals"]
 	path = chazs-goals
 	url = https://github.com/chazclark/chazs-goals
+[submodule "nicks-goals"]
+	path = nicks-goals
+	url = https://github.com/ncapito/nicks-goals
