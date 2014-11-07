@@ -13,3 +13,6 @@
 [submodule "nicks-goals"]
 	path = nicks-goals
 	url = https://github.com/ncapito/nicks-goals
+[submodule "angularjs-styleguide"]
+	path = angularjs-styleguide
+	url = git@github.com:unboxedtechnology/angularjs-styleguide.git
