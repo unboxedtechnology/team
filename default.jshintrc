@@ -1,0 +1,23 @@
+{
+  "curly": true, // true: Require {} for every new block or scope
+  "eqeqeq": true, // true: Require triple equals (===) for comparison
+  "immed": true, // true: Require immediate invocations to be wrapped in parens e.g. `(function () { } ());`
+  "latedef": 'function', // true: Require variables to be defined before being used
+  "newcap": true, // true: Require capitalization of all constructor functions e.g. `new F()`
+  "noarg": true,  // true: Prohibit use of `arguments.caller` and `arguments.callee`
+  "sub": true,
+  "undef": true, // true: Require all non-global variables to be declared (prevents global leaks)
+  "boss": true, // true: Tolerate assignments where comparisons would be expected
+  "eqnull": false,  // true: Tolerate use of `== null`
+  // Environments
+  "browser"       : true,     // Web Browser (window, document, etc)
+  "browserify"    : false,    // Browserify (node.js code in the browser)
+  "jasmine"       : false,    // Jasmine
+  "jquery"        : false,    // jQuery
+  "mocha"         : true,     // Mocha
+  "mootools"      : false,    // MooTools
+  "node"          : false,    // Node.js
+  "nonstandard"   : false,    // Widely adopted globals (escape, unescape, etc)
+  "globals": {
+  }
+}
