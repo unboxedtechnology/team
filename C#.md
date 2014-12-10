@@ -12,7 +12,12 @@ We use spaces not tabs.  4 spaces = 1 tab
 ### Bracing
 
 Open braces start on the line following the statement that begins the block.
-
+```C#
+if (x == 1)
+{
+  //code here
+}
+```
 
 ### Capitalization & Naming
 
