@@ -1,0 +1,47 @@
+[color]
+	ui = true
+	ui = true
+[user]
+	name = <yours>
+	email = <yours>
+[push]
+	default = current
+[core]
+	excludesfile = /Users/<yours>/.gitignore_global
+	autocrlf = true
+	eol = crlf
+	whitespace = cr-at-eol
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[alias]
+  tr = log --pretty=oneline --graph --decorate --all
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  d = checkout Development
+  pd = push origin Development 
+  dm = checkout Demo
+  pdm = push origin Demo
+  pt = checkout PublishedToTest
+  ppt = push origin PublishedToTest
+
+  rd = rebase Development
+  rpt = rebase PublishedToTest 
+  rmd = rebase MOTDev
+
+  md = merge Development
+  mpt = merge PublishedToTest 
+  md = merge MOTDev
+[sendemail]
+	smtpuser = <yours>@gmail.com
+	smtpserver = smtp.googlemail.com
+	smtpencryption = tls
+	smtpserverport = 587
