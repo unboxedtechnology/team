@@ -10,9 +10,9 @@ This document's purpose is to define the general guidelines to follow when deali
 
 The rule we follow is if the method can not accomplish what the name implies its an exceptional condition.  
 
-### Don't programatically use exceptions for control flow.  Don't knowingly allow exceptions to get thrown.  Use the (tester-dooer pattern)[http://msdn.microsoft.com/en-us/library/ms229009%28v=vs.110%29.aspx]  .
+### Don't programatically use exceptions for control flow.  Don't knowingly allow exceptions to get thrown.  Use the [tester-dooer pattern](http://msdn.microsoft.com/en-us/library/ms229009%28v=vs.110%29.aspx) .
 
-Don't progamatically use exceptions or purposily write dangerous code that will throw exceptions.  If for some reason you do do this, *always* document it.  (Joel)[http://www.joelonsoftware.com/articles/Wrong.html] also ellaborates on why it's bad to throw exceptions programatically.
+Don't progamatically use exceptions or purposily write dangerous code that will throw exceptions.  If for some reason you do do this, *always* document it.  [Joel](http://www.joelonsoftware.com/articles/Wrong.html) also ellaborates on why it's bad to throw exceptions programatically.
 
 e.g. (bad)
 
@@ -37,7 +37,7 @@ if(nick ==null){
 "It's almost always wrong to catch, or throw  `System.Excecption`".  All exceptions stem from `System.Exeption` so when you catch it you have no clue what actually went wrong.
 This opens the door for allowing the system to continue in an unstable state, or even can cause bugs to be hidden. In general do your best to allow exceptions to bubble up so we can triage them as they surface.
 
-In the event you catch an exception and you can not handle it make sure you ("rethrow" versus throw)[http://stackoverflow.com/questions/22623/throwing-exceptions-best-practices] the same exceptions;
+In the event you catch an exception and you can not handle it make sure you ["rethrow" versus throw](http://stackoverflow.com/questions/22623/throwing-exceptions-best-practices) the same exceptions;
 
 //Correct
 
