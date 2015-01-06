@@ -10,7 +10,20 @@ This document's purpose is to define the general guidelines to follow when deali
 
 The rule we follow is if the method can not accomplish what the name implies its an exceptional condition.  
 
-### Don't programatically use exceptions for control flow.  Don't knowingly allow exceptions to get thrown.  Use the [tester-dooer pattern](http://msdn.microsoft.com/en-us/library/ms229009%28v=vs.110%29.aspx) .
+### What is the exception message for?
+
+Exception message should be friendly enough for the end user to know what is going on.  Do not use it programtically. So I should not be string parsing an exception mesasge to "figure out" what went wrong.  (See: Picking the right exception)
+
+### Picking the right exception
+
+Use system exceptions when they make sense.  E.g. `ArgumentNullException` , `UnauthorizedAccessException` and make sure you understand the exception class.  Sometimes the exception that is thrown has additional information that can be use to react to.  e.g. [`ArgumentNullException`](http://msdn.microsoft.com/en-us/library/k8a0dfcy.aspx)  has a constructor that allows for you to inform the catcher which paramater was null.  
+
+When creating your own exception you can always customize the exception class itself and return extra information to the catcher.  Remember to keep it layer specific, because the caller is the one that should be handling this exception.  Only provide infomration that is useful to the exception.  DO your best to not *enable* developers to use progamatic exceptions by providing them with excessive information.  
+
+### Don't programatically use exceptions for control flow.  
+### Don't knowingly allow exceptions to get thrown.  
+
+Use the [tester-dooer pattern](http://msdn.microsoft.com/en-us/library/ms229009%28v=vs.110%29.aspx) .
 
 Don't progamatically use exceptions or purposily write dangerous code that will throw exceptions.  If for some reason you do do this, *always* document it.  [Joel](http://www.joelonsoftware.com/articles/Wrong.html) also ellaborates on why it's bad to throw exceptions programatically.
 
@@ -29,6 +42,9 @@ better:
     if(nick ==null){
       //do something
     }
+
+
+Code that throws unhandled exceptions is code that is bugy.  Those cases where exceptions get thrown are "missed / untested" paths through code.  Good / Simple Design allows developers to understand all paths through there application.
 
 
 ### Don't catch the unkown.  Don't catch what you can't handle.
@@ -52,7 +68,9 @@ In the event you catch an exception and you can not handle it make sure you ["re
     }
 
 
-### Document the exceptions you will be throwing from your API.  Only catch documented exceptions.
+### Document the exceptions you will be throwing from your API.  
+### Treat exceptions as part of your APIcontract.  
+### Only catch documented exceptions.
 
     /// <summary>
     /// Abbey is this the right format? 
@@ -76,5 +94,6 @@ Don't forget about "dont catch what you can't handle" but in the event you do ad
 1.  If you put it at the "Global" / Application layer the app will have to hault inorder to handle the exceptions.  So if your server is throwing exceptions at a high rate performance will be effected.
 2.  If possible put your exception handling logic at the BaseController level so that when the exception bubles up / out you can catch it and gracefuly handle it.
 3.  It's ok to shieled the exception (e.g. catch it and convert it to json in an error handler).  But make sure you do enough to support maintainablity.  This means log it to a database, spam someone, just make sure in production when it happens it's noisy.  *Remember, we do our best to not allow unhandled exceptions bubble up through our app.*
+
 ### Resources
 
