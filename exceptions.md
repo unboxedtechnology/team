@@ -16,20 +16,19 @@ Don't progamatically use exceptions or purposily write dangerous code that will 
 
 e.g. (bad)
 
-var nick = _context.UserFavorites.First().UserName 
-
-try{
-
-}catch(NullReferenceException){
-  //do something
-}
+    var nick = _context.UserFavorites.First().UserName 
+    try{
+    
+    }catch(NullReferenceException){
+      //do something
+    }
 
 better:
 
-var nick = _context.UserFavorites.FirstOrDefault();
-if(nick ==null){
-  //do something
-}
+    var nick = _context.UserFavorites.FirstOrDefault();
+    if(nick ==null){
+      //do something
+    }
 
 
 ### Don't catch the unkown.  Don't catch what you can't handle.
@@ -39,31 +38,29 @@ This opens the door for allowing the system to continue in an unstable state, or
 
 In the event you catch an exception and you can not handle it make sure you ["rethrow" versus throw](http://stackoverflow.com/questions/22623/throwing-exceptions-best-practices) the same exceptions;
 
-//Correct
+    //Correct
+    try{
+    }catch(Exception e){
+      throw;  //this is correct it will rethrow the same exception
+    }
 
-try{
-}catch(Exception e){
-  throw;  //this is correct it will rethrow the same exception
-}
 
-
-//BAD
-
-try{
-}catch(Exception e){
-  throw e;  //this will reset the stack trace...
-}
+    //BAD
+    try{
+    }catch(Exception e){
+      throw e;  //this will reset the stack trace...
+    }
 
 
 ### Document the exceptions you will be throwing from your API.  Only catch documented exceptions.
 
-/// <summary>
-/// Abbey is this the right format? 
-/// </summary>
-/// <param name="source">Source</param>
-/// <exception cref="ArgumentNullException">
-/// Thrown if Source is null</exception>
-/// <returns>A object</returns>
+    /// <summary>
+    /// Abbey is this the right format? 
+    /// </summary>
+    /// <param name="source">Source</param>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown if Source is null</exception>
+    /// <returns>A object</returns>
 
 It's important to document the exceptions that can be thrown from your API.  
 If you are going to throw them you should give a developer the oppertunity to catch them.  And the converse is also true only catch the exeptions that the API declares it throws.  We do this for many reasons the simplist jusfication is that you should not have intimate knowledge of the APIs you call.  
