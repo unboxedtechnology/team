@@ -67,7 +67,14 @@ In the event you catch an exception and you can not handle it make sure you ["re
       throw e;  //this will reset the stack trace...
     }
 
+If you catch an exception and rethrow a different type make sure you pass the original exception to the new exception.  This allows for the stacktrace (innerexception) to not get lost.
 
+    //good
+    try{
+    }catch(Exception e){
+      throw new CustomBusinessLogicException("New message", e); 
+    }
+    
 ### Document the exceptions you will be throwing from your API.  
 ### Treat exceptions as part of your APIcontract.  
 ### Only catch documented exceptions.
@@ -94,6 +101,20 @@ Don't forget about "dont catch what you can't handle" but in the event you do ad
 1.  If you put it at the "Global" / Application layer the app will have to hault inorder to handle the exceptions.  So if your server is throwing exceptions at a high rate performance will be effected.
 2.  If possible put your exception handling logic at the BaseController level so that when the exception bubles up / out you can catch it and gracefuly handle it.
 3.  It's ok to shieled the exception (e.g. catch it and convert it to json in an error handler).  But make sure you do enough to support maintainablity.  This means log it to a database, spam someone, just make sure in production when it happens it's noisy.  *Remember, we do our best to not allow unhandled exceptions bubble up through our app.*
+
+###  Usage vs Execution error.
+
+A usage error is when a developer  / user incorrectly calls a public api.  Best example of this is the ArgumentNullException.  When we are coding we should never purposfuly allow the `ArgumentNullException` to get thrown.  We should use the tester-doer pattern and prevent it.
+
+An execution error is something that can not be prevented by better code.  They are generally system related failures like IO issues (connection / access).  
+
+Why do I mention this ? Two reasons 
+
+1. Avoid creating new exceptions for UsageError. There is usually and exception in the `System` namespace that will accomplish your goal.  
+2. Be careful catching Execution exceptions because often there is not much more you can do besides provide a friendly message to the end user.
+3. 
+
+### If you are not handling the exception do not use the    
 
 ### Resources
 
