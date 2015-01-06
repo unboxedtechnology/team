@@ -10,13 +10,50 @@ This document's purpose is to define the general guidelines to follow when deali
 
 The rule we follow is if the method can not accomplish what the name implies its an exceptional condition.  
 
-### Don't programatically use exceptions for control flow
+### Don't programatically use exceptions for control flow.  Don't knowingly allow exceptions to get thrown.  Use the (tester-dooer pattern)[http://msdn.microsoft.com/en-us/library/ms229009%28v=vs.110%29.aspx]  .
 
-### Don't catch the unkown
+Don't progamatically use exceptions or purposily write dangerous code that will throw exceptions.  If for some reason you do do this, *always* document it.  (Joel)[http://www.joelonsoftware.com/articles/Wrong.html] also ellaborates on why it's bad to throw exceptions programatically.
 
-### Don't catch what you can't handle.
+e.g. (bad)
+
+var nick = _context.UserFavorites.First().UserName 
+
+try{
+
+}catch(NullReferenceException){
+  //do something
+}
+
+better:
+
+var nick = _context.UserFavorites.FirstOrDefault();
+if(nick ==null){
+  //do something
+}
+
+
+### Don't catch the unkown.  Don't catch what you can't handle.
+
 "It's almost always wrong to catch, or throw  `System.Excecption`".  All exceptions stem from `System.Exeption` so when you catch it you have no clue what actually went wrong.
 This opens the door for allowing the system to continue in an unstable state, or even can cause bugs to be hidden. In general do your best to allow exceptions to bubble up so we can triage them as they surface.
+
+In the event you catch an exception and you can not handle it make sure you ("rethrow" versus throw)[http://stackoverflow.com/questions/22623/throwing-exceptions-best-practices] the same exceptions;
+
+//Correct
+
+try{
+}catch(Exception e){
+  throw;  //this is correct it will rethrow the same exception
+}
+
+
+//BAD
+
+try{
+}catch(Exception e){
+  throw e;  //this will reset the stack trace...
+}
+
 
 ### Document the exceptions you will be throwing from your API.  Only catch documented exceptions.
 
@@ -34,5 +71,13 @@ Their documentation should be all you know and use.
 
 E.g.  If I am in the a Web API controller I should not be catching DataAccess exceptions that are being thrown 2 layers down.  The controller should be kept free of "implementation logic" of the data access layer.  It would be completely appropriate to catch a "Business Layer" exception.
 
+
+### Global Error Handlers
+
+Don't forget about "dont catch what you can't handle" but in the event you do add a global error handling to your application keep in mind these things:
+
+1.  If you put it at the "Global" / Application layer the app will have to hault inorder to handle the exceptions.  So if your server is throwing exceptions at a high rate performance will be effected.
+2.  If possible put your exception handling logic at the BaseController level so that when the exception bubles up / out you can catch it and gracefuly handle it.
+3.  It's ok to shieled the exception (e.g. catch it and convert it to json in an error handler).  But make sure you do enough to support maintainablity.  This means log it to a database, spam someone, just make sure in production when it happens it's noisy.  *Remember, we do our best to not allow unhandled exceptions bubble up through our app.*
 ### Resources
 
