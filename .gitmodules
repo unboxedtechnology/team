@@ -13,9 +13,6 @@
 [submodule "angularjs-styleguide"]
 	path = angularjs-styleguide
 	url = git@github.com:unboxedtechnology/angularjs-styleguide.git
-[submodule "ricks-goals"]
-	path = ricks-goals
-	url = git@github.com:rickbeddard/ricks-goals.git
 [submodule "tanu-goals"]
 	path = tanu-goals
 	url = git@github.com:tanusharmaUBT/tanu-goals.git
