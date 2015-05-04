@@ -1,18 +1,3 @@
-[submodule "shas-goals"]
-	path = shas-goals
-	url = https://github.com/shalotelli/shas-goals.git
-[submodule "scotts-goals"]
-	path = scotts-goals
-	url = https://github.com/slove11/scotts-goals
-[submodule "chazs-goals"]
-	path = chazs-goals
-	url = https://github.com/chazclark/chazs-goals
-[submodule "nicks-goals"]
-	path = nicks-goals
-	url = https://github.com/ncapito/nicks-goals
 [submodule "angularjs-styleguide"]
-	path = angularjs-styleguide
+	path = js/angularjs-styleguide
 	url = git@github.com:unboxedtechnology/angularjs-styleguide.git
-[submodule "tanu-goals"]
-	path = tanu-goals
-	url = git@github.com:tanusharmaUBT/tanu-goals.git
