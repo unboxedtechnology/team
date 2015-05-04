@@ -1,3 +1,3 @@
-[submodule "angularjs-styleguide"]
+[submodule "js/angularjs-styleguide"]
 	path = js/angularjs-styleguide
 	url = git@github.com:unboxedtechnology/angularjs-styleguide.git
