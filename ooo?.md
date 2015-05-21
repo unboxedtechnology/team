@@ -9,7 +9,8 @@ If you are planning to be OOO:
 ## Day before
  1. Day before you leave send an email letting everyone know if you are contactable and if not who is going to be answering questions on your behalf
  2. Put an out of office reply up in outlook
- 1. Enjoy your OOO time.
+ 3. Include your out of office info in your scrum update along with when you'll be back in the office (OOO: Tomorrow until 5/27)
+ 4. Enjoy your OOO time.
 
 ###Unplanned
 Something comes up and you have to be OOO
