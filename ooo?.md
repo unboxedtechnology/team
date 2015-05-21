@@ -5,7 +5,10 @@ If you are planning to be OOO:
  1. Once you get the approval its now time to put it on your calendar as OOO
  1. Put it in LP in the 2015 Vacations / PTO Bucket (see link below).  
  1. At a reasonable time before you leave (I do it the week before).  Send a reminder / warning email to everyone you work with including your manager reminding everyone you will be OOO soon and that if they need you before to go ahead and get with you now.
+
+## Day before
  1. Day before you leave send an email letting everyone know if you are contactable and if not who is going to be answering questions on your behalf
+ 2. Put an out of office reply up in outlook
  1. Enjoy your OOO time.
 
 ###Unplanned
