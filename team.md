@@ -1,5 +1,7 @@
+What do we expect from Unboxed Engingeers?
 
-Hungry for self improvement.  Be experts
+
+Hungry for self improvement.  Be experts.
 
 + Diligent learners
 + Be a teacher.  Be a student.
@@ -7,14 +9,14 @@ Hungry for self improvement.  Be experts
 + Failing makes us stronger
 
 
-AAA - Active, apply, and achieve
+Active, apply, and achieve. (AAA)
 
  + Actively share
  + Apply knowledge
  + Achieve goals
  + Influence the team
 
-Leading 
+Leading
 
 + hyper-aware
 + strong core values
@@ -26,4 +28,3 @@ Leading
 
 
 We fight for our culture & work life balance.
-
