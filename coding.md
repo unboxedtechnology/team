@@ -4,6 +4,25 @@
 
 This document's purpose is to define the core principles we code by.  
 
+## We commit to:
+
+We as an Engineering team are committing to doing the following before marking features/  stories complete:
+* Code Cleanup – Ensuring the code is free of commented out blocks of code, matches unboxed coding guidelines, and is well commented
+* Documenting Technical Debt – if there were things that you could not get to because of constraints we will document them in L.P.
+* Updating LP – Obviously we will need to update LP status to “Ready for Test” but also we will provide useful comments about the nature of the change, impacted areas, etc
+* Bug free, or known issues documented and communicated
+  * This communication belongs in the task or in the story itself
+  * We will do one final gauntlet of tests before marking things as done
+
+We are also committing to before starting a big feature / pattern:
+* We will perform a design review with another member of the team.  The goal of this to to be able to get feedback on the design and be able to identify potential issues in advance
+
+Lastly when a task / change is high risk:
+* If a task that consist of new patterns, new application of technology, or any other high risk change we will seek out code reviews
+
+
+
+
 ## General Principles
 
 ### B.S Rule
