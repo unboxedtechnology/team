@@ -19,27 +19,6 @@ if (x == 1)
 }
 ```
 
-When you have one line of code inside an if or loop, do not use braces like below
-```C#
--- Incorrect
-if (x == 1)
-{
-  someLineOfCode();
-}
-
-for (var a in collection)
-{
-  someLineOfCode();
-}
-
--- Suggested
-if (x == 1)
-  someLineOfCode();
-  
-for (var a in collection)
-  someLineOfCode();
-```
-
 ### Use of var & explicit declariations
 
 Use 'var' when type is explicitly declared in the same line or implied by another declaration.
