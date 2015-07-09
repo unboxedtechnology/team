@@ -19,6 +19,40 @@ if (x == 1)
 }
 ```
 
+### Use of var & explicit declariations
+
+Use 'var' when type is explicitly declared in the same line or implied by another declaration.
+
+```C#
+  --Incorrect
+  Dictionary<int, SomeObjectThatIWant> dictionary = new Dictionary<int, SomeObjectThatIWant>();
+  
+  --Suggested
+  var dictionary = new Dictionary<int, SomeObjectThatIWant>();
+  
+```
+
+An example of another declaration with in your context suggesting the type:
+
+```C#
+  --Incorrect
+  List<Customer> customers = new List<Customer>();
+  
+  foreach (Customer customer in customers)
+  {
+  
+  }
+  
+  --Suggested
+   var customers = new List<Customer>();
+  
+  foreach (var customer in customers)
+  {
+  
+  }
+  
+```
+
 ### Capitalization & Naming
 
 .NET uses uppercase naming for Classes & Properties.  camelCase is used for member variables, parameters, and local variables.
@@ -49,3 +83,5 @@ We do not allow unhandled exceptions to be thrown to client.  The allowed list o
 ### Entity Framework
 
 We do not use lazy loading.  We use ```Include()``` to pull in related entities.  We do not keep contexts open longer than needed.
+
+
