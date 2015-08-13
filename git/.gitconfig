@@ -1,0 +1,31 @@
+[color]
+	ui = true
+[user]
+	name = <yours>
+	email = <yours>
+[push]
+	default = current
+[core]
+	excludesfile = /Users/<yours>/.gitignore_global
+	whitespace = cr-at-eol
+
+[alias]
+  tr = log --pretty=oneline --graph --decorate --all
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  d = checkout dev 
+  qa = checkout qa
+  t = checkout test
+
+  rd = rebase dev
+  rt = rebase  test
+
+[sendemail]
+	smtpuser = <yours>@gmail.com
+	smtpserver = smtp.googlemail.com
+	smtpencryption = tls
+	smtpserverport = 587
