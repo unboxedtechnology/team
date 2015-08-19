@@ -10,19 +10,21 @@
 	whitespace = cr-at-eol
 
 [alias]
-  tr = log --pretty=oneline --graph --decorate --all
-  st = status
-  ci = commit
-  br = branch
-  co = checkout
-  df = diff
-  lg = log -p
-  d = checkout dev 
-  qa = checkout qa
-  t = checkout test
+	tr = log --pretty=oneline --graph --decorate --all
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
+	d = checkout dev
+	pt = checkout test
 
-  rd = rebase dev
-  rt = rebase  test
+	rd = rebase dev
+	rpt = rebase test
+
+	#http://blogs.atlassian.com/2014/07/git-guilt-blame-code-review/
+	g3= guilt `git log --until="3 days ago" --format="%H" -n 1
 
 [sendemail]
 	smtpuser = <yours>@gmail.com

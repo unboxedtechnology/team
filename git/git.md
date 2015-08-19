@@ -50,3 +50,8 @@ TODO (Rick/Scott) explain the process that happens after we code freeze.  e.g. w
 
 
 ```
+
+## Git config
+https://github.com/nojhan/liquidprompt
+https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
+http://blogs.atlassian.com/2014/07/git-guilt-blame-code-review/
