@@ -30,7 +30,7 @@ e.g.
 
 ## Tagging
 
-Our tags are based on (Semantic Versioning)[  http://semver.org/].  
+Our tags are based on [Semantic Versioning](http://semver.org/).  
 
 >Given a version number MAJOR.MINOR.PATCH, increment the:
 >  MAJOR version when you make incompatible API changes,
@@ -53,5 +53,9 @@ TODO (Rick/Scott) explain the process that happens after we code freeze.  e.g. w
 
 ## Git config
 https://github.com/nojhan/liquidprompt
+
 https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
+
 http://blogs.atlassian.com/2014/07/git-guilt-blame-code-review/
+
+https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
