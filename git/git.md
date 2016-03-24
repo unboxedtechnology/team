@@ -9,10 +9,13 @@ This document's purpose is to define how we use git.  Our familiar patterns and 
 
 We use short, but descriptive, lowercase branch names. Our standard branches are
 
-master
-dev (default)
-test
-uat
+> master
+>
+>  dev (default)
+>
+> test
+>
+> uat
 
 
 ### Feature Branching / Bug Fixes
@@ -23,8 +26,8 @@ e.g.
 
 ```git
 
-  git checkout -b sync-api
-  git checkout -b community-perf-fixes
+git checkout -b sync-api
+git checkout -b community-perf-fixes
 
 ```
 
