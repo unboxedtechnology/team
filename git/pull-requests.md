@@ -13,7 +13,7 @@ Alternatively:
 
 >hey reviewers, I just implemented #1123.    Please take a look and make sure it's as you expected.  Once you approve i'll merge it in.
 
-Good pull requests are designed to be more informative then interrogative.   Always understand why you are creating a PR.  Get to know your teams (roles & responsibilities)[r&r.md].  Generally by the time you get to that point you are creating a PR you should be either at the very beginning (working on getting design approval) or at the very end (code complete).  Never should you be creating a PR that has code that is complete and is just now getting technical design approval.  
+Good pull requests are designed to be more informative then interrogative.   Always understand why you are creating a PR.  Get to know your teams (roles & responsibilities)[./Roles and Responsibilities.md].  Generally by the time you get to that point you are creating a PR you should be either at the very beginning (working on getting design approval) or at the very end (code complete).  Never should you be creating a PR that has code that is complete and is just now getting technical design approval.  
 
 
 ### Before the Requests
